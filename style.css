@@ -1,0 +1,160 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Barlow Semi Condensed", sans-serif;
+}
+
+body {
+  background-color: hsl(258, 33%, 94%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas:
+    "daniel daniel jonathan kira"
+    "jeanette patrick patrick kira";
+  column-gap: 2rem;
+  row-gap: 2rem;
+  margin: 0 auto;
+  max-width: 1000px; /* ← これで横幅の上限を設定 */
+  width: 100%; /* ← 画面が狭いときは自動で縮む */
+  padding: 0 1rem;
+}
+
+.daniel {
+  position: relative;
+  overflow: hidden; /* ← はみ出し対策（必要に応じて） */
+  grid-area: daniel;
+  background-color: hsl(263, 55%, 52%);
+  color: hsl(260, 100%, 95%);
+  padding: 2.5rem;
+  border-radius: 8px;
+  box-shadow: 20px 14px 41px -9px #b5b5b5;
+}
+
+.jonathan {
+  grid-area: jonathan;
+  background-color: hsl(217, 19%, 35%);
+  color: hsl(214, 17%, 92%);
+  padding: 2.5rem;
+  border-radius: 8px;
+  box-shadow: 33px 43px 31px -9px #c9c9c9;
+}
+
+.kira {
+  grid-area: kira;
+  background-color: hsl(0, 0%, 100%);
+  color: hsl(224, 10%, 45%);
+  padding: 2.5rem;
+  border-radius: 8px;
+  box-shadow: 33px 43px 31px -9px #c9c9c9;
+}
+
+.jeanette {
+  grid-area: jeanette;
+  background-color: hsl(0, 0%, 100%);
+  color: hsl(224, 10%, 45%);
+  padding: 2.5rem;
+  border-radius: 8px;
+  box-shadow: 33px 43px 31px -9px #c9c9c9;
+}
+
+.patrick {
+  grid-area: patrick;
+  background-color: hsl(0, 0%, 7%);
+  color: hsl(0, 0%, 81%);
+  padding: 2.5rem;
+  border-radius: 8px;
+  box-shadow: 33px 43px 31px -9px #c9c9c9;
+}
+
+.card-img {
+  display: flex;
+  align-items: center;
+}
+
+.profile {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+
+.profile-name {
+  font-weight: 500;
+}
+
+.pattern {
+  position: absolute;
+  top: 0;
+  right: 5rem;
+  width: 7rem;
+  opacity: 0.7; /* ふんわり感出したいとき */
+  z-index: 0; /* テキストより奥にしたいとき */
+}
+
+.description {
+  padding: 1rem 0;
+}
+
+.attribution {
+  margin-top: 5rem;
+}
+
+.attribution a {
+  text-decoration: none;
+}
+
+@media (max-width: 64rem) {
+  body {
+    padding: 2rem;
+    align-items: stretch;
+  }
+
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas:
+      "daniel jonathan"
+      "jeanette patrick"
+      "kira kira";
+  }
+
+  .pattern {
+    display: none;
+  }
+}
+
+@media (max-width: 36rem) {
+  body {
+    padding: 2rem;
+    align-items: stretch;
+  }
+
+  .cards {
+    display: block;
+  }
+
+  .daniel {
+    margin-top: 1rem;
+  }
+
+  .daniel,
+  .jonathan,
+  .jeanette,
+  .patrick {
+    margin-bottom: 1rem;
+  }
+
+  .pattern {
+    display: none;
+  }
+}
