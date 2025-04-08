@@ -20,7 +20,7 @@
 
 ### リンク
 
-- Solution URL: [Add solution URL here](https://four-card-blush-ten.vercel.app/)
+- Solution URL: [Add solution URL here](https://testimonials-grid-hazel-ten.vercel.app/)
 
 ## 制作プロセス
 
